@@ -12,11 +12,11 @@ mlflow.set_tracking_uri('https://dagshub.com/kalehariprasad/mlflow-dagshub-demo.
 
 
 mlflow.set_experiment("demo_exeperiment") 
-with mlflow.start_run(run_name='default'):  
+with mlflow.start_run(run_name='change in params'):  
     db = load_diabetes()
-    n_estimators=100
-    max_depth=2
-    max_features=5
+    n_estimators=50
+    max_depth=3
+    max_features=3
     X_train, X_test, y_train, y_test = train_test_split(db.data, db.target)
     rf = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features)    
     rf.fit(X_train, y_train)
